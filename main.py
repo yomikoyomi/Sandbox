@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+
 class Responder:
     """ AIの応答を制御するクラス
 
@@ -16,6 +17,7 @@ class Responder:
     @property
     def name(self):
         return self._name
+
 
 class Unmo:
     """人工無能コアクラス
@@ -40,8 +42,11 @@ class Unmo:
     def responder_name(self):
         return self._responder.name
 
+
 def build_prompt(unmo):
-    return '{name}:{responder}> '.format(name = unmo.name, responder = unmo.responder_name)
+    return '{name}:{responder}> '.format(
+        name=unmo.name, responder=unmo.responder_name)
+
 
 if __name__ == '__main__':
     print('Unmo System Prototype : proto')
@@ -52,5 +57,5 @@ if __name__ == '__main__':
             break
 
         response = proto.dialogue(text)
-        print('{prompt}:{responder}'.format(prompt = build_prompt(proto), responder = response))
-
+        print('{prompt}:{responder}'.format(
+            prompt=build_prompt(proto), responder=response))
